@@ -1,0 +1,263 @@
+.profile-page-container {
+  display: flex;
+  justify-content: center;
+  background-color: #f8f9fa;
+  min-height: 80vh; /* Ensure the container covers the entire viewport height */
+  flex-direction: column; /* Stack elements vertically to fill space */
+  align-items: center; /* Center content horizontally */
+}
+
+.profile-page-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensure the container takes full viewport height when loading */
+}
+
+.profile-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.profile-page h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #333333;
+}
+
+.profile-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+}
+
+.profile-upload-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  border-right: 2px solid #ddd;
+  padding: 40px;
+}
+
+.profile-info {
+  flex: 2;
+  padding: 20px;
+  text-align: left;
+}
+
+.profile-info h1 {
+  margin-bottom: 50px;
+}
+
+.profile-picture {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  max-height: auto;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+/* Profile picture */
+.profile-picture img {
+  width: 200px;  /* Increase width */
+  height: 200px;  /* Increase height */
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.profile-upload-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-upload-button {
+  margin: 5px 0;
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f9d068;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.profile-upload-button:hover {
+  background-color: #866921;
+  color: white;
+}
+
+.profile-info {
+  width: 100%;
+}
+
+.profile-info h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: #333333;
+}
+
+.profile-info p {
+  text-align: left;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #666666;
+}
+
+.profile-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.profile-row label {
+  font-weight: bold;
+  width: 150px;
+  color: #333333;
+}
+
+.profile-row span {
+  color: #333333;
+}
+
+.profile-row ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .profile-content {
+    flex-direction: column;
+  }
+
+  .profile-upload-section {
+    border-right: none;
+    margin-right: 0;
+    padding: 20px;
+  }
+
+  .profile-info {
+    padding: 20px;
+  }
+
+  .profile-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .profile-row label {
+    margin-bottom: 5px;
+  }
+
+  /* Adjust the profile picture and name for mobile */
+
+
+  .profile-name {
+    font-size: 14px;
+  }
+}
+
+/* Style the profile name under the profile picture */
+.profile-name {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+/* Camera icon */
+.camera-icon1 {
+  position: absolute;
+  bottom: 65px;
+  right: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  border-radius: 100%;
+  cursor: pointer;
+  color: white;
+  font-size: 18px;
+}
+
+.camera-icon1:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+/* Adjust modal content layout */
+.crop-modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  width: 80%;
+  max-width: 500px;
+  height: auto; /* Make the height flexible */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  z-index: 10;
+}
+
+/* Cropper container: ensure it takes up available space without being cut off */
+.cropper-preview-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  margin-top: 420px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px; /* Space for buttons */
+  min-height: 300px; /* Minimum height for the cropper */
+  background-color: transparent !important;
+  gap: 20px; 
+}
+/* Modal buttons (Upload & Cancel) */
+
+
+.crop-modal-buttons button:hover {
+  background-color: #866921;
+  color: white;
+}
+
+
+.ReactModal__Content {
+  background: transparent !important; /* Remove white background */
+  border: none !important; /* Remove border */
+  box-shadow: none !important; /* Optionally remove shadow if needed */
+  padding: 0; /* Remove padding to avoid extra space */
+}
+
+/* Modal overlay background */
+.ReactModal__Overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent overlay */
+}

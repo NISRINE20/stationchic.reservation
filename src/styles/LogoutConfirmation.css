@@ -1,0 +1,106 @@
+/* LogoutConfirmation.css */
+
+.logout-confirmation-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.logout-confirmation-box {
+    background-color: var(--background-box);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 80%;
+    text-align: center;
+}
+
+.logout-confirmation-box h3 {
+    margin-bottom: 20px;
+    color: var(--text-color-dark);
+}
+
+
+
+.confirm-button,
+.cancel-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    color: white;
+}
+
+/* Updated LogoutConfirmation.css */
+
+/* Container for the action buttons */
+.logout-confirmation-actions {
+    display: flex;
+    justify-content: center; /* Center-align the buttons */
+    gap: 20px; /* Space between the buttons */
+    margin-top: 20px; /* Additional margin to separate buttons from the message */
+}
+
+/* Button Styling */
+.yes-button, .no-button {
+    padding: 12px 25px; /* Adjust padding for a balanced look */
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    color: white;
+    min-width: 120px; /* Ensure consistent button width */
+    font-weight: bold;
+}
+
+.yes-button {
+    background-color: #f6d08c;
+    color: black;
+}
+
+.no-button {
+    background-color: #95a5a6;
+    color: black;
+}
+
+.no-button:hover {
+    background-color: #7f8c8d; /* Slightly darker on hover */
+    color: white;
+    font-weight: bold;
+}
+
+.yes-button:hover {
+    background-color: #eac27b; /* Slightly lighter on hover */
+    color: white;
+    font-weight: bold;
+}
+
+
+.spinner {
+    border: 6px solid #f3f3f3; /* Light grey background border */
+    border-top: 6px solid #c59f47; /* Updated spinner color */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+
+/* Spinner animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

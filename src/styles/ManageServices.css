@@ -1,0 +1,197 @@
+/* Main container */
+.background {
+    background-image:url(../../public/images/bg5.jpg) ; /* Light gray background, adjust as needed */
+    background-size: cover;
+    position: absolute; /* Use absolute positioning */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1; /* Position behind other elements */
+}
+
+.manage-services-container {
+    max-width: 1200px;
+    margin-left: 400px; /* Adjust for your desired spacing */
+    margin-top: 50px;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Flex container for form, filter, and service list */
+.manage-services-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px; /* Add space between form and filter section */
+}
+
+/* Form container (Left side) */
+.form-container {
+    flex: 1; /* Take up remaining space on the left side */
+    display: flex;
+    flex-direction: column; /* Stack form elements vertically */
+    gap: 20px; /* Space between form fields */
+    max-width: 500px; /* Limit form width */
+}
+
+/* Filter container (Right side) */
+.filter-container {
+    flex: 1; /* Take up remaining space on the right side */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between filter and service list */
+    text-align: left; /* Align filter text to the left */
+}
+
+/* Services List Container */
+.services-list {
+    list-style: none;
+    padding: 0;
+    max-height: 400px; /* Set a maximum height for scrolling */
+    width: 600px;
+    overflow-y: auto;  /* Enable vertical scrolling */
+    border: 1px solid #e3e3e3; /* Optional: Add border */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    margin-top: 10px; /* Space between the form and the list */
+}
+
+/* Service Item Styling */
+.service-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    transition: background-color 0.3s;
+    margin-left: 10px;
+}
+
+.service-item:last-child {
+    border-bottom: none; /* Remove border for the last item */
+}
+
+.service-item:hover {
+    background-color: #e0dfdf;
+}
+
+/* Input fields */
+.input-field {
+    width: 90%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+.input-field1 {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+.input-field2 {
+    width: 104%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+.input-field:focus {
+    border-color: #f6d08c;
+    outline: none;
+}
+
+/* Add button */
+.add-button {
+    width: 150px;
+    background-color: #f6d08c;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-button:hover {
+    background-color: #f9c161;
+    color: rgb(255, 255, 255);
+}
+
+/* Service details */
+.service-details {
+    flex: 1;
+    text-align: left;
+    margin-top: 1px;
+}
+
+/* Status Styling */
+.status {
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.status.available {
+    color: green;
+}
+
+.status.not-available {
+    color: red;
+}
+
+/* Buttons */
+.toggle-status-btn,
+.edit-btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.toggle-status-btn {
+    background-color: #28a745;
+    color: rgb(255, 255, 255);
+    margin-right: 5px;
+    transition: background-color 0.3s;
+}
+
+.toggle-status-btn:hover {
+    background-color: #218838;
+    color: #000000;
+}
+
+.edit-btn {
+    background-color: #f6d08c;
+    color: rgb(0, 0, 0);
+    transition: background-color 0.3s;
+}
+
+.edit-btn:hover {
+    background-color: #f9c161;
+    color: rgb(255, 255, 255);
+}
+
+/* Filter container */
+.filter-container {
+    text-align: left; /* Align text to the left */
+    margin-bottom: 20px; /* Space below the filter container */
+}
+
+/* Header */
+.h2-manage {
+    font-size: 24px;
+    margin-bottom: 50px;
+    border-bottom: 2px solid #f6d08c; /* Adjust color as needed */
+    padding-bottom: 5px;
+    display: inline-block;
+}
