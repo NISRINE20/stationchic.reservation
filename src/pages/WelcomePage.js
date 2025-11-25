@@ -319,14 +319,7 @@ const WelcomePage = () => {
         style={{ backgroundImage: `url(${aboutUsBg})` }}
  // Set background image here
       >
-        <div className="about-us-content">
-          <h2>About Us</h2>
-          <p>
-            Welcome to Chic Station, where style meets convenience. Our team is dedicated to
-            providing high-quality beauty services that cater to your personal needs. We aim to
-            ensure every experience leaves you feeling refreshed and beautiful.
-          </p>
-        </div>
+
           <div className="branch-image">
     <div className="branch-navigation">
       <button
@@ -345,6 +338,7 @@ const WelcomePage = () => {
         <FontAwesomeIcon icon={faChevronRight} />
       </button>
     </div>
+    
 
     <div className="image-container">
       <a 
@@ -360,8 +354,15 @@ const WelcomePage = () => {
     </div>  
     <p>{branches[currentBranch].address}</p>
     </div>
-    <footer className="social-footer">
-      <p>Contact Us</p>
+            <div className="about-us-content">
+          <h2>About Us</h2>
+          <p>
+            Welcome to Chic Station, where style meets convenience. Our team is dedicated to
+            providing high-quality beauty services that cater to your personal needs. We aim to
+            ensure every experience leaves you feeling refreshed and beautiful.
+          </p>
+
+      <h3>Contacts</h3>
       <div className="social-icons">
         <a href="https://www.facebook.com/chicstationdavao" target="_blank" rel="noopener noreferrer">
           <FaFacebook size={30} />
@@ -377,7 +378,8 @@ const WelcomePage = () => {
           <span> (+63) 945-443-0380 </span>
         </div>
       </div>
-    </footer>
+        </div>
+
     </div>
     
     </div>

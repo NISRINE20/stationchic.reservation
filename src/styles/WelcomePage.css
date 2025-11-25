@@ -3,36 +3,38 @@
   margin-top: 2px;
   margin-bottom: 2px;
 }
+
 .container {
   display: flex;
-  height: 100vh; /* Full height of the viewport */
-  width: 100%; /* Full width of the viewport */
+  height: 100vh;
+  width: 100%;
 }
 
 /* Slideshow container (left side) */
 .slideshow {
   flex: 1;
   position: relative;
-  overflow: hidden; /* Hide any overflow from sliding images */
+  overflow: hidden;
 }
+
 .create-account-button2 {
   margin-top: 2px;
 }
+
 /* Individual slide */
 .slide {
   position: absolute;
   top: 0;
-  left: 100%; /* Start off-screen to the right */
+  left: 100%;
   width: 100%;
   height: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0; /* Start invisible */
+  opacity: 0;
   transition: transform 1s ease-in-out, opacity 1s ease-in-out;
 }
 
-/* Active slide: Move into view and become visible */
 .slide.active {
   left: 0;
   opacity: 1;
@@ -82,7 +84,7 @@
 .book-now-button {
   padding: 10px 20px;
   font-size: 1rem;
-  background-color: #2e1a02b6 !important; /* Force the new background color */
+  background-color: #2e1a02b6 !important;
   color: white !important;
   border: none;
   border-radius: 5px;
@@ -95,7 +97,7 @@
   background-color: #432603 !important;
 }
 
-/* Login container (when displayed) */
+/* Login container */
 .login-container {
   flex: 1;
   display: flex;
@@ -122,16 +124,16 @@
   text-align: center;
 }
 
-.login-logo {
+.login-logo, .logo1 {
   max-width: 150px;
   margin-bottom: 20px;
   border-radius: 100%;
 }
 
-.login-button {
+.login-button, .google-login {
   padding: 10px 20px;
   font-size: 1rem;
-  background-color: #2e1a02b6; 
+  background-color: #2e1a02b6;
   color: white;
   border: none;
   border-radius: 5px;
@@ -139,25 +141,34 @@
   margin-top: 10px;
   margin-bottom: 10px;
   transition: background-color 0.3s;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Keyframe animations for fade */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.login-button:hover, .google-login:hover {
+  background-color: #432603;
 }
 
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
+/* Form styling */
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
 }
 
 /* Modal Container */
@@ -191,6 +202,8 @@
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   z-index: 1001;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
 /* Close Button */
@@ -216,71 +229,40 @@
   z-index: 999;
 }
 
-/* Disable Scrolling */
-body.modal-open {
-  overflow: hidden;
-}
-
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column; /* Stack items vertically on smaller screens */
-  }
-  
-  .slideshow, .welcome-container {
-    flex: 1; /* Both take equal space in a stacked layout */
-    height: 50%; /* Adjust height to fit the view */
-  }
-  
-  .welcome-container {
-    padding: 20px; /* Reduce padding for mobile */
-  }
-}
-
-@media (max-width: 480px) {
-  .welcome-message h1 {
-    font-size: 2rem; /* Smaller heading for mobile */
-  }
-  
-  .welcome-message p {
-    font-size: 1rem; /* Smaller paragraph for mobile */
-  }
-
-  .book-now-button, .login-button {
-    font-size: 0.9rem; /* Smaller button text for mobile */
-  }
-}
-
 .scrollable-container {
   overflow-y: auto;
   height: 100vh;
 }
+
 /* Services section styling */
 .services-section1 {
-  width: 80%; /* Section width at 80% of the parent */
-  max-width: 1200px; /* Optional: Prevents it from being too wide on large screens */
-  padding: 40px;
+  width: 90%;
+  max-width: 1200px;
+  padding: 40px 20px;
   background-color: #fff;
   text-align: center;
-  margin: 0px auto; /* Center the section horizontally */
+  margin: 40px auto;
 }
-.services-section1 h2 {
+
+.services-section1 h2,
+.h2-welcome {
   display: inline-block;
-  border-bottom: 2px solid #f6d08c; /* Adjust color as needed */
-  padding-bottom: 5px; /* Space between text and underline */
-  margin-bottom: 20px; /* Space below the heading */
+  border-bottom: 2px solid #f6d08c;
+  padding-bottom: 5px;
+  margin-bottom: 30px;
+  font-size: 2rem;
 }
+
 .service-box1 ul {
-  list-style: none; /* Remove bullet points */
-  padding: 0; /* Remove default padding */
-  margin: 0; /* Remove default margin */
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .service-box1 li {
-  margin: 5px 0; /* Optional: Add spacing between list items */
+  margin: 8px 0;
+  font-size: 1rem;
 }
-
 
 .services-grid1 {
   display: grid;
@@ -289,155 +271,495 @@ body.modal-open {
 }
 
 .service-box1 {
-  padding: 10px;
+  padding: 20px;
   border: 3px solid #f6d08c;
   border-radius: 5px;
   background-color: #ffff;
 }
 
+.service-box1 h3 {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
 /* About Us Section */
 .about-us-section {
   position: relative;
-  height: 100vh; /* Full viewport height */
+  min-height: 100vh;
   display: flex;
-  flex-direction: column; /* Stack children vertically */
-  align-items: flex-end; /* Align items to the right */
-  justify-content: flex-start; /* Align items to the top */
-  background-color: #f0f0f0; /* Fallback color */
-  background-image: url('../images/Chic Station.jpg'); /* Use the correct relative path */
-  background-size: cover; /* Ensures the image covers the whole section */
-  background-position: center; /* Centers the image */
-  overflow: hidden; /* Hides overflow if needed */
-  padding: 20px; /* Adjust padding as needed */
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  background-color: #f5d296;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  padding: 40px 20px;
 }
 
 .about-us-content {
-  max-width: 800px; /* Optional: limits the width of the content */
-  color: #333; /* Text color for contrast */
-  margin: 0; /* Remove margin */
-  margin-right: 2%;
+  max-width: 800px;
+  width: 90%;
+  color: #333;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 20px;
+  border-radius: 10px;
+}
+.about-us-content h3 {
+  text-align: center;
 }
 
 .about-us-content h2 {
   font-size: 2em;
-  margin-bottom: 0.5em; /* Space below the heading */
+  margin-bottom: 0.5em;
 }
 
 .about-us-content p {
-  font-size: 1.2em; /* Font size for the paragraph */
-  line-height: 1.5; /* Line height for readability */
+  font-size: 1.2em;
+  line-height: 1.6;
 }
 
-.branch-images {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 30px;
-}
-
+/* Branch Images */
 .branch-image {
-  margin: 15px;
+  margin: 30px auto;
   text-align: center;
-}
-
-.branch-image img {
-  width: 900px; /* Adjust width as needed */
-  height: auto;
-  border-radius: 8px; /* Optional: adds rounded corners */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: adds shadow for a lifted effect */
-}
-
-.branch-image p {
-  margin-top: 10px;
-  font-size: 20px;
-  color: #000000;
-}
-.branch-image {
-  position: relative; /* Allow absolute positioning of children */
-  text-align: center; /* Center align the address text */
+  width: 100%;
+  max-width: 900px;
 }
 
 .branch-navigation {
-  display: flex; /* Use flexbox for horizontal alignment */
-  align-items: center; /* Center items vertically */
-  justify-content: center; /* Center content horizontally */
-  margin-bottom: 10px; /* Space between the navigation and image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 15px;
+}
+
+.branch-navigation h3 {
+  margin: 0;
+  font-size: 1.5rem;
 }
 
 .image-container {
-  position: relative; /* Allow child elements to be positioned relative to this */
-  display: inline-block; /* Keep buttons and image in a row */
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.image-container img {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .branch-button {
-  background-color: transparent; /* Transparent background */
-  border: none; /* Remove border */
-  cursor: pointer; /* Pointer cursor on hover */
-  padding: 10px; /* Add some padding for click area */
+  background-color: rgba(46, 26, 2, 0.7);
+  border: none;
+  cursor: pointer;
+  padding: 12px 15px;
+  border-radius: 50%;
+  color: white;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
-.branch-button.left {
-  margin-right: 10px; /* Space between left button and heading */
-}
-
-.branch-button.right {
-  margin-left: 10px; /* Space between right button and heading */
-}
-
-.branch-button img {
-  width: 30px; /* Set the size of the icon */
-  height: 30px; /* Set the size of the icon */
-  transition: transform 0.2s; /* Smooth scaling effect */
-}
-
-.branch-button:hover img {
-  transform: scale(1.1); /* Slightly increase size on hover */
+.branch-button:hover {
+  background-color: rgba(67, 38, 3, 0.9);
+  transform: scale(1.1);
 }
 
 .branch-button:disabled {
-  opacity: 0.5; /* Make the button appear disabled */
-  cursor: not-allowed; /* Change cursor to not-allowed */
+  opacity: 0.3;
+  cursor: not-allowed;
 }
+
+.branch-button svg {
+  font-size: 1.2rem;
+}
+
+.branch-image p {
+  margin-top: 15px;
+  font-size: 1.1rem;
+  color: #000000;
+  padding: 0 20px;
+}
+
+/* Social Footer */
 .social-footer {
-  text-align: center; /* Center the text within the footer */
-  margin-top: 0; /* No margin at the top */
-  margin-bottom: 130px;
-  margin-left: 115px;
-  position: absolute; /* Allows free placement */
-  left: 0; /* Align to the left */
-  bottom: 0; /* Align to the bottom */
-  width: auto; /* Allow the width to auto-adjust */
-  padding: 10px; /* Optional: Add some padding */
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.h3 {
+  text-align: center;
 }
 
 .social-footer p {
-  font-size: 18px;
-  margin-bottom: 10px;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
   color: #000000;
+  font-weight: bold;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .social-icons a {
-  margin: 0 15px;
   color: #000000;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .social-icons a:hover {
-  color: #ffffff;
+  color: #2e1a02b6;
+  transform: translateY(-3px);
 }
 
-.social-icons svg {
-  vertical-align: middle;
-}
 .phone-icon {
   display: flex;
   align-items: center;
-  justify-content: center; 
-  margin-top: 15px; /* Space between social icons and phone */
-  color: #000000; /* Color for the phone text */
+  justify-content: center;
+  color: #000000;
+  font-size: 1rem;
 }
 
 .phone-icon span {
-  margin-left: 10px; /* Space between the icon and phone number */
+  margin-left: 10px;
 }
-  
+
+/* ============================================
+   RESPONSIVE MEDIA QUERIES
+   ============================================ */
+
+/* Tablets and smaller laptops (768px - 1024px) */
+@media (max-width: 1024px) {
+  .services-grid1 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .about-us-content {
+    max-width: 90%;
+  }
+
+  .branch-image img {
+    max-width: 700px;
+  }
+}
+
+/* Tablets (Portrait) and Large Phones (481px - 768px) */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .slideshow {
+    height: 40vh;
+    min-height: 250px;
+  }
+
+  .welcome-container,
+  .login-container {
+    padding: 30px 20px;
+    border-radius: 0;
+    height: auto;
+    min-height: 60vh;
+  }
+
+  .welcome-message h1 {
+    font-size: 2rem;
+  }
+
+  .welcome-message p {
+    font-size: 1rem;
+  }
+
+  .logo1 {
+    max-width: 120px;
+  }
+
+  .services-section1 {
+    padding: 30px 15px;
+    width: 95%;
+  }
+
+  .services-section1 h2,
+  .h2-welcome {
+    font-size: 1.8rem;
+  }
+
+  .services-grid1 {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .service-box1 {
+    padding: 15px;
+  }
+
+  .about-us-section {
+    padding: 30px 15px;
+    align-items: center;
+  }
+
+  .about-us-content {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  .about-us-content h2 {
+    font-size: 1.6em;
+  }
+
+  .about-us-content p {
+    font-size: 1rem;
+  }
+
+  .branch-image {
+    margin: 20px auto;
+  }
+
+  .branch-navigation h3 {
+    font-size: 1.3rem;
+  }
+
+  .branch-image img {
+    max-width: 100%;
+  }
+
+  .branch-image p {
+    font-size: 1rem;
+  }
+
+  .social-footer {
+    position: static;
+    margin: 30px auto;
+    width: 90%;
+  }
+
+  .social-footer p {
+    font-size: 1.1rem;
+  }
+
+  .phone-icon {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .phone-icon span {
+    margin-left: 0;
+  }
+}
+
+/* Mobile Phones (320px - 480px) */
+@media (max-width: 480px) {
+  .slideshow {
+    height: 35vh;
+    min-height: 200px;
+  }
+
+  .welcome-container,
+  .login-container {
+    padding: 20px 15px;
+  }
+
+  .welcome-message,
+  .login-box {
+    padding: 15px;
+  }
+
+  .welcome-message h1 {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+  }
+
+  .welcome-message p {
+    font-size: 0.9rem;
+  }
+
+  .logo1 {
+    max-width: 100px;
+    margin-bottom: 15px;
+  }
+
+  .book-now-button,
+  .login-button,
+  .google-login {
+    padding: 12px 15px;
+    font-size: 0.95rem;
+  }
+
+  .form-group input {
+    padding: 8px;
+  }
+
+  .services-section1 {
+    padding: 25px 10px;
+    margin: 20px auto;
+  }
+
+  .services-section1 h2,
+  .h2-welcome {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .service-box1 {
+    padding: 12px;
+  }
+
+  .service-box1 h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+
+  .service-box1 li {
+    font-size: 0.9rem;
+    margin: 6px 0;
+  }
+
+  .about-us-section {
+    padding: 20px 10px;
+    min-height: auto;
+  }
+
+  .about-us-content {
+    padding: 12px;
+    margin: 10px;
+  }
+
+  .about-us-content h2 {
+    font-size: 1.4em;
+  }
+
+  .about-us-content p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .branch-navigation {
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  .branch-navigation h3 {
+    font-size: 1.1rem;
+  }
+
+  .branch-button {
+    padding: 10px 12px;
+  }
+
+  .branch-button svg {
+    font-size: 1rem;
+  }
+
+  .branch-image p {
+    font-size: 0.9rem;
+    padding: 0 10px;
+  }
+
+  .social-footer {
+    padding: 15px 10px;
+    margin: 20px auto;
+  }
+
+  .social-footer p {
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+
+  .social-icons {
+    gap: 15px;
+  }
+
+  .social-icons svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .phone-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .phone-icon span {
+    font-size: 0.9rem;
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 15px;
+  }
+}
+
+/* Extra Small Phones (max-width: 320px) */
+@media (max-width: 320px) {
+  .welcome-message h1 {
+    font-size: 1.4rem;
+  }
+
+  .welcome-message p {
+    font-size: 0.85rem;
+  }
+
+  .logo1 {
+    max-width: 80px;
+  }
+
+  .services-section1 h2,
+  .h2-welcome {
+    font-size: 1.3rem;
+  }
+
+  .service-box1 h3 {
+    font-size: 1rem;
+  }
+
+  .service-box1 li {
+    font-size: 0.85rem;
+  }
+
+  .about-us-content h2 {
+    font-size: 1.2em;
+  }
+
+  .about-us-content p {
+    font-size: 0.9rem;
+  }
+
+  .branch-navigation h3 {
+    font-size: 1rem;
+  }
+
+  .branch-image p {
+    font-size: 0.85rem;
+  }
+}
+
+/* Landscape mode for mobile devices */
+@media (max-height: 500px) and (orientation: landscape) {
+  .container {
+    flex-direction: row;
+  }
+
+  .slideshow {
+    height: 100vh;
+  }
+
+  .welcome-container,
+  .login-container {
+    height: 100vh;
+    overflow-y: auto;
+  }
+}
